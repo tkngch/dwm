@@ -12,7 +12,7 @@ static const char *fonts[]          = { "monospace:size=10" };
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { "#D9DDDC", "#222021", "#222021" },  // inactive bar colour
-	[SchemeSel]  = { "#D9DDDC", "#222021", "#222021" },  // active tag bar colour
+	[SchemeSel]  = { "#D9DDDC", "#363636", "#222021" },  // active tag bar colour
 };
 
 /* tagging */
