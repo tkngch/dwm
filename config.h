@@ -12,11 +12,11 @@ static const char *fonts[]          = { "monospace:size=10" };
 static const char *colors[][3]      = {
 	/*               fg         bg         window border   */
 	[SchemeNorm] = { "#a4a6ab", "#2d2c28", "#2d2c28" },  // inactive colour
-	[SchemeSel]  = { "#a4a6ab", "#2d2c28", "#2d2c28" },  // active tag bar colour
+	[SchemeSel]  = { "#a4a6ab", "#2d2c28", "#5B5955" },  // active tag bar colour
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4" };
+static const char *tags[] = { "色", "即", "是", "空" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -34,7 +34,7 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[M]",      monocle },
+	{ "<0>",      monocle },
 	{ "__",      tile },    /* first entry is default */
 	{ "~~",      NULL },    /* no layout function means floating behavior */
 };
