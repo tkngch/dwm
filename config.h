@@ -16,7 +16,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "色", "即", "是", "空" };
+static const char *tags[] = { "春", "夏", "秋", "冬" };
 
 static const Rule rules[] = {
 	/* xprop(1):
