@@ -8,6 +8,9 @@ OBJ = ${SRC:.c=.o}
 
 all: ${HOME}/bin/dwm
 
+man:
+	groff -m man -T ascii dwm.1
+
 options:
 	@echo dwm build options:
 	@echo "CFLAGS   = ${CFLAGS}"
