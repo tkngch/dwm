@@ -16,7 +16,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "春", "夏", "秋", "冬" };
+static const char *tags[] = { "壱", "弐", "参", "肆", "伍" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -34,9 +34,9 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "<0>",      monocle },
-	{ "__",      tile },    /* first entry is default */
-	{ "~~",      NULL },    /* no layout function means floating behavior */
+	{ "▣",      monocle },
+	{ "◫",      tile },    /* first entry is default */
+	{ "▢",      NULL },    /* no layout function means floating behavior */
 };
 
 /* key definitions */
@@ -89,4 +89,3 @@ static Button buttons[] = {
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
 };
-
