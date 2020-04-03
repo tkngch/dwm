@@ -699,6 +699,8 @@ drawbar(Monitor *m)
 	int boxs = drw->fonts->h / 9;
 	int boxw = drw->fonts->h / 6 + 2;
 	unsigned int i, occ = 0, urg = 0;
+        unsigned int n = 0;
+        char layout_indication[16];
 	Client *c;
 
 	/* draw status first so it can be overdrawn by tags later */
@@ -712,6 +714,8 @@ drawbar(Monitor *m)
 		occ |= c->tags;
 		if (c->isurgent)
 			urg |= c->tags;
+                if (ISVISIBLE(c))
+                        n++;
 	}
 	x = 0;
 	for (i = 0; i < LENGTH(tags); i++) {
@@ -724,9 +728,13 @@ drawbar(Monitor *m)
 				urg & 1 << i);
 		x += w;
 	}
-	w = blw = TEXTW(m->ltsymbol);
+        if (n > 0)
+            snprintf(layout_indication, sizeof layout_indication, "%s%d", m->ltsymbol, n);
+        else
+            snprintf(layout_indication, sizeof layout_indication, "%s", m->ltsymbol);
+	w = blw = TEXTW(layout_indication);
 	drw_setscheme(drw, scheme[SchemeNorm]);
-	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
+	x = drw_text(drw, x, 0, w, bh, lrpad / 2, layout_indication, 0);
 
 	if ((w = m->ww - sw - x) > bh) {
 		if (m->sel) {
@@ -1106,11 +1114,6 @@ monocle(Monitor *m)
 	unsigned int n = 0;
 	Client *c;
 
-	for (c = m->clients; c; c = c->next)
-		if (ISVISIBLE(c))
-			n++;
-	if (n > 0) /* override layout symbol */
-		snprintf(m->ltsymbol, sizeof m->ltsymbol, "▣%.*s", n, "...................");
 	for (c = nexttiled(m->clients); c; c = nexttiled(c->next))
 		resize(c, m->wx, m->wy, m->ww - 2 * c->bw, m->wh - 2 * c->bw, 0);
 }
