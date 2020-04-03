@@ -11,12 +11,12 @@ static const char dmenufont[]       = "";
 static const char *fonts[]          = { "monospace:size=10" };
 static const char *colors[][3]      = {
 	/*               fg         bg         window border   */
-	[SchemeNorm] = { "#a4a6ab", "#2d2c28", "#2d2c28" },  // inactive colour
-	[SchemeSel]  = { "#a4a6ab", "#2d2c28", "#5B5955" },  // active tag bar colour
+	[SchemeNorm] = { "#747369", "#2d2d2d", "#2d2d2d" },  // inactive colour
+	[SchemeSel]  = { "#d3d0c8", "#2d2d2d", "#2d2d2d" },  // active tag bar colour
 };
 
 /* tagging */
-static const char *tags[] = { "壱", "弐", "参", "肆", "伍" };
+static const char *tags[] = { "壱", "弐", "参", "肆", "伍", "陸", "漆", "捌", "玖" };
 
 static const Rule rules[] = {
 	/* xprop(1):
