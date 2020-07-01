@@ -30,7 +30,7 @@ static const Rule rules[] = {
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals. 0 to fill the gap. */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals. 0 to fill the gap. */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -52,10 +52,12 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { NULL };
 static const char *termcmd[]  = { "terminal", NULL };
+static const char *emacscmd[]  = { "emacs", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_e,      spawn,          {.v = emacscmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_Tab,    focusstack,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_Tab,    focusstack,     {.i = -1 } },
